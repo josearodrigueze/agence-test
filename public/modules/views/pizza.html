@@ -1,0 +1,8 @@
+<div class="row" ng-if="grafico.labels.length > 0">
+    <canvas id="pie" class="chart chart-pie" chart-legend="true"
+            chart-data="grafico.data" chart-labels="grafico.labels">
+    </canvas>
+</div>
+<div class="row" ng-if="grafico.series.length == 0">
+    No existen Registros para mostrar!!
+</div>

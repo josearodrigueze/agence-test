@@ -1,0 +1,38 @@
+<table class="table table-responsive table-striped" ng-repeat="relatorio in relatorios">
+    <thead>
+    <tr>
+        <th colspan="5">{{relatorio.vendedor.no_usuario}}</th>
+    </tr>
+    <tr>
+        <th>Período</th>
+        <th>Receita Líquida</th>
+        <th>Custo Fixo</th>
+        <th>Comissão</th>
+        <th>Lucro</th>
+    </tr>
+    </thead>
+
+    <tfoot>
+    <tr>
+        <th>SALDO</th>
+        <th>{{getTotalLiquido(relatorio.data) | numeraljs:'0.0,'}}</th>
+        <th>R$ -{{getTotalCosto(relatorio.data) | numeraljs:'0.0,'}}</th>
+        <th>R$ -{{getTotalComision(relatorio.data) | numeraljs:'0.0,'}}</th>
+        <th class="text-primary">
+            {{getTotalLucro(relatorio.data) | numeraljs:'0.0,'}}
+        </th>
+    </tr>
+    </tfoot>
+
+    <tbody>
+    <tr ng-repeat="row in relatorio.data">
+        <td>{{row.mes}} del {{row.anio}}</td>
+        <td>R$ {{row.liquida | numeraljs:'0.0,'}}</td>
+        <td>R$ -{{row.costo | numeraljs:'0.0,'}}</td>
+        <td>R$ -{{row.comision | numeraljs:'0.0,'}}</td>
+        <td ng-class="( (row.liquida - row.costo - row.comision) > 0 ) ? 'text-success' : 'text-danger'">
+            R$ {{(row.liquida - row.costo - row.comision) | numeraljs:'0.0,'}}
+        </td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Agence</title>
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="vendors/angular-bootstrap/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet" href="vendors/bootstrap-duallistbox/dist/bootstrap-duallistbox.min.css"/>
+    <link rel="stylesheet" href="vendors/angular-chart.js/dist/angular-chart.css">
+    <!--<link rel="stylesheet" href="css/app.css">-->
+</head>
+<body>
+<template-messages></template-messages>
+<div class="header">
+    <h1>Test Agence</h1>
+
+    <div class="row">
+        <div class="col-md-2">Aspirante</div>
+        <div class="col-md-10">Jose Rodriguez</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Desarrollado con:</div>
+        <div class="col-md-10">Angular Js, Mysql, Laravel 5.1</div>
+    </div>
+</div>
+<hr/>
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+<script src="vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/angular/angular.min.js"></script>
+<script src="vendors/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="vendors/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="vendors/angular-resource/angular-resource.min.js"></script>
+
+<!-- NumeralJs-->
+<script src="vendors/numeral/min/numeral.min.js"></script>
+<script src="vendors/numeral/min/languages/es.min.js"></script>
+<script src="vendors/angular-numeraljs/dist/angular-numeraljs.min.js"></script>
+
+<!-- Charts -->
+<script src="vendors/Chart.js/Chart.min.js"></script>
+<script src="vendors/angular-chart.js/dist/angular-chart.min.js"></script>
+
+<!--Dualli Box-->
+<script src="vendors/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.min.js"></script>
+<script src="vendors/angular-bootstrap-duallistbox/dist/angular-bootstrap-duallistbox.min.js"></script>
+
+<script src="js/index.js"></script>
+
+<!--Rutas de los modulos-->
+<script src="modules/routes.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/app-utility.js"></script>
+
+<!--Manipuladores de Filtros-->
+<script src="modules/controllers/filtroscontroller.js"></script>
+<script src="modules/controllers/relatoriocontroller.js"></script>
+<script src="modules/controllers/pizzacontroller.js"></script>
+<script src="modules/controllers/graficoscontroller.js"></script>
+<script src="modules/models/services.js"></script>
+
+</body>
+</html>

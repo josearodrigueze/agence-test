@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-6">
+        <label for="form-desde">Desde</label>
+
+        <p class="input-group">
+            <input id="form-desde" type="text" class="form-control" ng-model="model.desde"
+                   datepicker-popup="{{calendar.format}}" is-open="calendar.opened.start"
+                   min-date="calendar.minDate" max-date="model.hasta"
+                   datepicker-options="calendar.dateOptions"
+                   datepicker-mode="'month'"
+                   date-disabled="calendar.disabled(date, mode)" readonly="readonly"
+                   close-text="Cerrar" clear-text="Limpiar" current-text="Hoy"/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="calendar.open($event,'start')">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+            </span>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <label for="form-fecha-">Hasta</label>
+
+        <p class="input-group">
+            <input id="form-fecha-" type="text" class="form-control" ng-model="model.hasta"
+                   datepicker-popup="{{calendar.format}}" is-open="calendar.opened.end"
+                   min-date="model.desde" max-date="calendar.maxDate"
+                   datepicker-options="calendar.dateOptions"
+                   datepicker-mode="'month'"
+                   date-disabled="calendar.disabled(date, mode)" readonly="readonly"
+                   close-text="Cerrar" clear-text="Limpiar" current-text="Hoy"/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="calendar.open($event,'end')">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+            </span>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <select multiple ng-model="model.vendedores" bs-duallistbox
+            ng-options="obj as obj.no_usuario for obj in dualbox.salesmen track by obj.co_usuario"
+            bootstrap2="{{ dualbox.settings.bootstrap2 }}"
+
+            move-on-select="{{ dualbox.settings.moveOnSelect }}"
+            preserve-selection="{{ dualbox.settings.preserveSelection }}"
+
+            move-selected-label="{{ dualbox.settings.moveSelectedLabel }}"
+            move-all-label="{{ dualbox.settings.moveAllLabel }}"
+            remove-selected-label="{{ dualbox.settings.removeSelectedLabel }}"
+            remove-all-label="{{ dualbox.settings.removeAllLabel }}"
+
+            non-selected-list-label="{{ dualbox.settings.nonSelectedListLabel }}"
+            selected-list-label="{{ dualbox.settings.selectedListLabel }}"
+
+            postfix="{{ dualbox.settings.postfix }}"
+            select-min-height="{{ dualbox.settings.selectMinHeight }}"
+
+            filter="{{ dualbox.settings.filter }}"
+            filter-values="{{ dualbox.settings.filterValues }}"
+            filter-non-selected="dualbox.settings.filterNonSelected"
+            filter-selected="dualbox.settings.filterSelected"
+            filter-placeholder="{{ dualbox.settings.filterPlaceholder }}"
+            filter-clear="{{ dualbox.settings.filterClear }}"
+            info-all="{{ dualbox.settings.infoAll }}"
+            info-filtered="{{ dualbox.settings.infoFiltered }}"
+            info-empty="{{ dualbox.settings.infoEmpty }}"
+            >
+    </select>
+</div>
+
+<div class="row text-center form-group">
+    <br/>
+    <button class="btn btn-primary" ng-click="buttons.relatorio()">Relatório</button>
+    <button class="btn btn-primary" ng-click="buttons.grafico()">Gráficos</button>
+    <button class="btn btn-primary" ng-click="buttons.pizza()">Pizza</button>
+</div>
+
+<hr/>
+<div ui-view></div>

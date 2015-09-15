@@ -1,0 +1,5 @@
+<div ng-show="flash_error || flash_success || flash_info" id='content-alert' class="modal-body">
+    <alert id="template-error" ng-show="flash_error" type="danger" close="closeAlert($index)"></alert>
+    <alert id="template-success" ng-show="flash_success" type="success" close="closeAlert($index)"></alert>
+    <alert id="template-info" ng-show="flash_info" close="closeAlert($index)"></alert>
+</div>
